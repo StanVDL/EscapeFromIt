@@ -6,11 +6,11 @@ public class ObjectScripts : MonoBehaviour
 {
     public GameObject SlimeBox;
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Enemy")
         {
-            SlimeBox.SetActive(false);
+            Destroy(collision.gameObject);
         }
     }
 }
