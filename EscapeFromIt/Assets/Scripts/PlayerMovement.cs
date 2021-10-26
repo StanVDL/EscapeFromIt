@@ -37,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector3(x, 0, z) * speed;
+        rb.velocity = (transform.forward * z + transform.right * x) * speed;
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight - 2f * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
     }
 }
