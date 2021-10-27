@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
     public float gravity = -9.8f;
-    public float jumpHeight = 30f;
+    public float jumpHeight = 10f;
     public float jumpSpeed = 5f;
-    public float Jump;
+    public Vector3 Jump;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -24,19 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(0, 70, 0, ForceMode.VelocityChange);
-        }
-
-        else
-        {
-            rb.AddForce(0, -20, 0, ForceMode.Force);
-        }
     }
 
     // Update is called once per frame
@@ -53,5 +40,10 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         rb.velocity = (transform.forward * z + transform.right * x) * speed;
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(new Vector3(0, 500f, 0));
+        }
     }
 }
