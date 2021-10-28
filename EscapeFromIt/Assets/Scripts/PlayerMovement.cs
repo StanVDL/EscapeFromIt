@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
     public float gravity = -9.8f;
-    public float jumpHeight = 10f;
+    public static float jumpHeight = 10f;
     public float jumpSpeed = 5f;
     public Vector3 Jump;
 
@@ -17,9 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
-    bool isGrounded;
+    public static bool isGrounded;
 
-    Rigidbody rb;
+    public static Rigidbody rb;
 
     private void Start()
     {
@@ -43,7 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector3(0, 500f, 0));
+            rb.AddForce(new Vector3(0, jumpHeight, 0));
+        }
+
+        else
+        {
+            rb.AddForce(new Vector3(0, -300, 0));
         }
     }
 }
