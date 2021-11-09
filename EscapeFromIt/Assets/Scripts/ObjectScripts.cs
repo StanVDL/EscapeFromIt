@@ -9,15 +9,24 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject SlimeBox;
 
+    public GameObject FirstHint;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            
+            FirstHint.SetActive(true);
+        }
+
+        if (collision.gameObject.tag != "Enemy")
+        {
+            FirstHint.SetActive(false);
         }
 
         if (collision.gameObject.tag == "Friendly")
         {
+            Debug.Log("Friendly");
+            Debug.Log("Is true");
         }
     }
 

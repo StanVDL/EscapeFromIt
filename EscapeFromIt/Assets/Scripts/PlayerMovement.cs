@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         OnGround = true;
-
-        velocity.y -= 450;
 }
 
     // Update is called once per frame
