@@ -7,10 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Player;
 
     public float speed = 12f;
-    public float gravity = -9.8f;
-    public float jumpHeight = 10f;
-    public float jumpSpeed = 5f;
-    public Vector3 Jump;
 
     Vector3 velocity;
 
@@ -18,12 +14,14 @@ public class PlayerMovement : MonoBehaviour
 
     bool OnGround;
 
-    public bool useGravity = true;
+    Vector3 fallSpeed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         OnGround = true;
+
+        velocity.y -= 450;
 }
 
     // Update is called once per frame
@@ -37,22 +35,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Jumping()
     {
+        if (OnGround == false)
+        {
+            Physics.gravity = fallSpeed;
+            fallSpeed.y = -450;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             OnGround = false;
 
-            GetComponent<Rigidbody>().AddRelativeForce(0, 10, 0);
+            rb.AddForce(0, 50, 0, ForceMode.Impulse);
         }
-
-        if (OnGround == false)
-        {
-
-        }
-    }
-
-    void FixedUpdate()
-    {
-        rb.useGravity = false;
-        if (useGravity) rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
     }
 }
