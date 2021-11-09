@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectScripts : MonoBehaviour
 {
@@ -12,18 +13,20 @@ public class ObjectScripts : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            bool v = PlayerMovement.jumpHeight == newJump;
+            
         }
 
         if (collision.gameObject.tag == "Friendly")
         {
-            PlayerMovement.isGrounded = true;
-
-            if (PlayerMovement.isGrounded == true && Input.GetButtonDown("Jump"))
-            {
-                PlayerMovement.rb.AddForce(0, PlayerMovement.jumpHeight, 0);
-            }
-
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("Main");
+        }
+    }
+
 }
