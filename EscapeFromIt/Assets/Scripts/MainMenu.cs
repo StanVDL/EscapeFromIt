@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public void QuitButton()
     {
         Debug.Log("QUIT");
+
         Application.Quit();
     }
 

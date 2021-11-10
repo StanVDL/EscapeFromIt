@@ -11,11 +11,23 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject FirstHint;
 
+    public static Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             FirstHint.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.velocity = new Vector3(0, 150f, 0);
+            }
         }
 
         if (collision.gameObject.tag != "Enemy")
@@ -26,6 +38,7 @@ public class ObjectScripts : MonoBehaviour
         if (collision.gameObject.tag == "Friendly")
         {
             Debug.Log("Friendly");
+
             Debug.Log("Is true");
         }
     }

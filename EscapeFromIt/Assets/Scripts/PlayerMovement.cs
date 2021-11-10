@@ -14,36 +14,39 @@ public class PlayerMovement : MonoBehaviour
 
     bool OnGround;
 
-    Vector3 fallSpeed;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
         OnGround = true;
-}
+    }
 
     // Update is called once per frame
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
+
         float z = Input.GetAxis("Vertical");
 
         rb.velocity = (transform.forward * z + transform.right * x) * speed;
     }
 
-    void Jumping()
+    private void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && OnGround == true)
+        {
+            Jumping();
+            OnGround = false;
+        }
+
         if (OnGround == false)
         {
-            Physics.gravity = fallSpeed;
-            fallSpeed.y = -450;
+            
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnGround = false;
-
-            rb.AddForce(0, 50, 0, ForceMode.Impulse);
-        }
+    void Jumping()
+    {
+            rb.velocity = new Vector3(0, 150f, 0);
     }
 }
