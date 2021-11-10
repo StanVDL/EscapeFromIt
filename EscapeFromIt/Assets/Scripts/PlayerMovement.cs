@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && OnGround == true)
         {
             Jumping();
+
             OnGround = false;
 
             Physics.gravity = new Vector3(0, -450F, 0);

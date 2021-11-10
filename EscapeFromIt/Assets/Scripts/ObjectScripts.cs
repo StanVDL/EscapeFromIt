@@ -13,6 +13,10 @@ public class ObjectScripts : MonoBehaviour
 
     public static Rigidbody rb;
 
+    public GameObject SecondHint;
+
+    public GameObject Respawn;
+
 
     private void Start()
     {
@@ -50,11 +54,31 @@ public class ObjectScripts : MonoBehaviour
 
             PlayerMovement.OnGround = true;
         }
+
+        if (collision.gameObject.tag == "Hint1")
+        {
+            Debug.Log("Go");
+
+            Debug.Log("To");
+
+            Debug.Log("Hint2");
+
+            PlayerMovement.OnGround = true;
+
+            SecondHint.SetActive(true);
+        }
+
+        if (collision.gameObject.tag == "Respawn")
+        {
+            SecondHint.SetActive(false);
+
+            Respawn.SetActive(true);
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && Respawn.activeSelf == true)
         {
             SceneManager.LoadScene("Main");
         }
@@ -62,6 +86,6 @@ public class ObjectScripts : MonoBehaviour
 
     void JumpingSlime()
     {
-        rb.velocity = new Vector3(0, 550f, 0);
+        rb.velocity = new Vector3(0, 150f, 0);
     }
 }
