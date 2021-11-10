@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     public static Rigidbody rb;
 
-    bool OnGround;
+    public static bool OnGround;
+
+    Vector3 fallSpeed;
 
     private void Start()
     {
@@ -37,11 +39,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumping();
             OnGround = false;
-        }
 
-        if (OnGround == false)
-        {
-            
+            Physics.gravity = new Vector3(0, -450F, 0);
         }
     }
 

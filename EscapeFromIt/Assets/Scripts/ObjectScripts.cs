@@ -13,9 +13,12 @@ public class ObjectScripts : MonoBehaviour
 
     public static Rigidbody rb;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        PlayerMovement.OnGround = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,15 +27,19 @@ public class ObjectScripts : MonoBehaviour
         {
             FirstHint.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && PlayerMovement.OnGround == true)
             {
-                rb.velocity = new Vector3(0, 150f, 0);
+                JumpingSlime();
             }
+
+            PlayerMovement.OnGround = true;
         }
 
         if (collision.gameObject.tag != "Enemy")
         {
             FirstHint.SetActive(false);
+
+            PlayerMovement.OnGround = false;
         }
 
         if (collision.gameObject.tag == "Friendly")
@@ -40,6 +47,8 @@ public class ObjectScripts : MonoBehaviour
             Debug.Log("Friendly");
 
             Debug.Log("Is true");
+
+            PlayerMovement.OnGround = true;
         }
     }
 
@@ -51,4 +60,8 @@ public class ObjectScripts : MonoBehaviour
         }
     }
 
+    void JumpingSlime()
+    {
+        rb.velocity = new Vector3(0, 550f, 0);
+    }
 }
