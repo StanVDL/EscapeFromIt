@@ -48,10 +48,6 @@ public class ObjectScripts : MonoBehaviour
 
         if (collision.gameObject.tag == "Friendly")
         {
-            Debug.Log("Friendly");
-
-            Debug.Log("Is true");
-
             PlayerMovement.OnGround = true;
         }
 

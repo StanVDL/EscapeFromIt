@@ -40,8 +40,11 @@ public class PlayerMovement : MonoBehaviour
             Jumping();
 
             OnGround = false;
+        }
 
-            Physics.gravity = new Vector3(0, -450F, 0);
+        if (OnGround == false)
+        {
+            Physics.gravity = new Vector3(0, -500, 0);
         }
     }
 
