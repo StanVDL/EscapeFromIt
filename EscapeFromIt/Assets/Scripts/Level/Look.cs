@@ -8,6 +8,8 @@ public class Look : MonoBehaviour
 
     public Transform playerBody;
 
+    float xRotate = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,15 @@ public class Look : MonoBehaviour
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
+
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
-        playerBody.Rotate(Vector3.up * mouseSens);
+        xRotate -= mouseY;
+
+        xRotate = Mathf.Clamp(xRotate, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(xRotate, 0f, 0f);
+
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 }
