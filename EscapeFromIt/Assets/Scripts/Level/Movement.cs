@@ -13,6 +13,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        float xx = Input.GetAxis("Horizontal");
+
+        float zz = Input.GetAxis("Vertical");
+
     }
 }
