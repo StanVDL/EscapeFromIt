@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
+    public CharacterController control;
+
+    public float speed = 12f;
+
+    Vector3 velocity;
+
+    public float gravity = -9.81f;
+
+    public Transform groundCheck;
+
+    public float groundDistance = 0.4f;
+
+    public LayerMask groundMask;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +33,12 @@ public class Movement : MonoBehaviour
 
         float zz = Input.GetAxis("Vertical");
 
+        Vector3 move = transform.right * xx + transform.forward * zz;
+
+        control.Move(move * speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        control.Move(velocity * Time.deltaTime);
     }
 }
