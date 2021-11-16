@@ -63,7 +63,7 @@ public class Movement : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Enemy"))
         {
-            jump = 40f;
+            jump = 25f;
 
             autoJump = true;
 
