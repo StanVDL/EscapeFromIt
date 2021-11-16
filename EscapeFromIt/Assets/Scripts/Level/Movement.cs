@@ -19,6 +19,10 @@ public class Movement : MonoBehaviour
 
     public LayerMask groundMask;
 
+    bool isGrounded;
+
+    public float jump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
 
         float xx = Input.GetAxis("Horizontal");
 
@@ -36,6 +46,11 @@ public class Movement : MonoBehaviour
         Vector3 move = transform.right * xx + transform.forward * zz;
 
         control.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jump * -2f * gravity);
+        }
 
         velocity.y += gravity * Time.deltaTime;
 
