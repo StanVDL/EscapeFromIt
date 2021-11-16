@@ -25,6 +25,12 @@ public class Movement : MonoBehaviour
 
     bool autoJump = false;
 
+    bool slimeBox = false;
+
+    public GameObject SlimeMessage;
+
+    public GameObject SkipMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +63,13 @@ public class Movement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         control.Move(velocity * Time.deltaTime);
+
+        if (SkipMessage.activeSelf == true && Input.GetKeyDown(KeyCode.E))
+        {
+            SkipMessage.SetActive(false);
+
+            SlimeMessage.SetActive(false);
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -68,6 +81,10 @@ public class Movement : MonoBehaviour
             autoJump = true;
 
             AutoJump();
+
+            slimeBox = true;
+
+            SlimeBoxMessage();
         }
 
         else
@@ -81,6 +98,16 @@ public class Movement : MonoBehaviour
         if (autoJump == true)
         {
             velocity.y = Mathf.Sqrt(jump * -2f * gravity);
+        }
+    }
+
+    void SlimeBoxMessage()
+    {
+        if (slimeBox == true)
+        {
+            SlimeMessage.SetActive(true);
+
+            SkipMessage.SetActive(true);
         }
     }
 }
