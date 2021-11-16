@@ -56,4 +56,18 @@ public class Movement : MonoBehaviour
 
         control.Move(velocity * Time.deltaTime);
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Enemy"))
+        {
+            jump = 100f;
+        }
+
+        else
+        {
+            jump = 10f;
+        }
+        
+    }
 }
