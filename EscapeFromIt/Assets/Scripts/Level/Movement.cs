@@ -23,6 +23,8 @@ public class Movement : MonoBehaviour
 
     public float jump;
 
+    bool autoJump = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,13 +63,24 @@ public class Movement : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Enemy"))
         {
-            jump = 100f;
+            jump = 40f;
+
+            autoJump = true;
+
+            AutoJump();
         }
 
         else
         {
             jump = 10f;
         }
-        
+    }
+
+    void AutoJump()
+    {
+        if (autoJump == true)
+        {
+            velocity.y = Mathf.Sqrt(jump * -2f * gravity);
+        }
     }
 }
