@@ -14,4 +14,13 @@ public class OptionsMenu : MonoBehaviour
     {
         Screen.fullScreen = IsFullscreen;
     }
+
+    public void QuitButton()
+    {
+        Debug.Log("QUIT");
+
+        Debug.Log("YEET");
+
+        Application.Quit();
+    }
 }
