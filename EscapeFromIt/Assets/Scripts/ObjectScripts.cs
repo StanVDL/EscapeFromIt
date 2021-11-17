@@ -69,6 +69,14 @@ public class ObjectScripts : MonoBehaviour
             SecondHint.SetActive(false);
 
             Respawn.SetActive(true);
+
+            Debug.Log("Test Respawn");
+
+            Debug.Log("This is");
+
+            Debug.Log("A");
+
+            Debug.Log("Respawn");
         }
     }
 
