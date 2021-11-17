@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class ObjectScripts : MonoBehaviour
 {
@@ -17,12 +20,19 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject Respawn;
 
+    float lavaTime = 30f;
+
+    public static int CountLava = 5;
+
+    Text counting;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
 
         PlayerMovement.OnGround = true;
+
+        counting = GetComponent<Text>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -91,5 +101,10 @@ public class ObjectScripts : MonoBehaviour
     void JumpingSlime()
     {
         rb.velocity = new Vector3(0, 150f, 0);
+    }
+
+    void LavaCountdown()
+    {
+        counting.text = "Lava will kill you in " + CountLava;
     }
 }
