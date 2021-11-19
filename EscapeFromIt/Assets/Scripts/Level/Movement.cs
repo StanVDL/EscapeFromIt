@@ -31,6 +31,10 @@ public class Movement : MonoBehaviour
 
     public GameObject SkipMessage;
 
+    public GameObject AutoHint1;
+
+    public GameObject Hint2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +112,14 @@ public class Movement : MonoBehaviour
             SlimeMessage.SetActive(true);
 
             SkipMessage.SetActive(true);
+        }
+    }
+
+    void Hint1()
+    {
+        if (Hint2.activeSelf == true)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
