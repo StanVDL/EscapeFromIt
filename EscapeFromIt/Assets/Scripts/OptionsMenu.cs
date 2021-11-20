@@ -21,6 +21,10 @@ public class OptionsMenu : MonoBehaviour
 
         Debug.Log("YEET");
 
+        Debug.Log("QUITED");
+
+        Debug.Log("Test");
+
         Application.Quit();
     }
 }

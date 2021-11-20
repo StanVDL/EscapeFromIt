@@ -123,4 +123,12 @@ public class ObjectScripts : MonoBehaviour
             TestHint2.SetActive(true);
         }
     }
+
+    void IfSoHint()
+    {
+        if (TestHint3.activeSelf == true)
+        {
+            TestHint4.SetActive(false);
+        }
+    }
 }
