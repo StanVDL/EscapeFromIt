@@ -26,6 +26,14 @@ public class ObjectScripts : MonoBehaviour
 
     Text counting;
 
+    public GameObject TestHint;
+
+    public GameObject TestHint2;
+
+    public GameObject TestHint3;
+
+    public GameObject TestHint4;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -106,5 +114,13 @@ public class ObjectScripts : MonoBehaviour
     void LavaCountdown()
     {
         counting.text = "Lava will kill you in " + CountLava;
+    }
+
+    void TestHintYeet()
+    {
+        if (TestHint.activeSelf == true)
+        {
+            TestHint2.SetActive(true);
+        }
     }
 }
