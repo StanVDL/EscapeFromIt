@@ -34,6 +34,8 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject TestHint4;
 
+    public GameObject ifSoDo;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -130,5 +132,16 @@ public class ObjectScripts : MonoBehaviour
         {
             TestHint4.SetActive(false);
         }
+    }
+
+    void DoSo()
+    {
+        if (ifSoDo.activeSelf == false)
+        {
+            gameObject.SetActive(true);
+
+            Debug.Log("Finishedd");
+        }
+
     }
 }

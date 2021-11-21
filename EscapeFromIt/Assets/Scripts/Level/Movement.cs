@@ -136,4 +136,14 @@ public class Movement : MonoBehaviour
             Yeet1.SetActive(true);
         }
     }
+
+    void Wack2()
+    {
+        if (Wack1.activeSelf == false)
+        {
+            Zeb1.SetActive(true);
+
+            Debug.Log("Finished");
+        }
+    }
 }
