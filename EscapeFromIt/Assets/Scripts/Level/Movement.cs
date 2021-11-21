@@ -35,6 +35,12 @@ public class Movement : MonoBehaviour
 
     public GameObject Hint2;
 
+    public GameObject Yeet1;
+
+    public GameObject Wack1;
+
+    public GameObject Zeb1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +126,14 @@ public class Movement : MonoBehaviour
         if (Hint2.activeSelf == true)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    void Zeb11()
+    {
+        if (Zeb1.activeSelf == true)
+        {
+            Yeet1.SetActive(true);
         }
     }
 }
