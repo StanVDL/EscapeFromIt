@@ -36,6 +36,12 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject ifSoDo;
 
+    public GameObject SHEESH;
+
+    public GameObject OYALE;
+
+    public GameObject Gimma;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -143,5 +149,26 @@ public class ObjectScripts : MonoBehaviour
             Debug.Log("Finishedd");
         }
 
+    }
+
+    void Gimmaa()
+    {
+        if (Gimma.activeSelf == false)
+        {
+            gameObject.SetActive(true);
+
+            Debug.Log("Zebbeee");
+        }
+    }
+
+    void SHEESHSSS()
+
+    {
+        if (SHEESH.activeSelf == true)
+        {
+            gameObject.SetActive(false);
+
+            Debug.Log("WHOESHOEM");
+        }
     }
 }
