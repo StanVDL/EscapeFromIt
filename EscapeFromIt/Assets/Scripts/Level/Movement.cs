@@ -41,6 +41,12 @@ public class Movement : MonoBehaviour
 
     public GameObject Zeb1;
 
+    public GameObject Hop;
+
+    public GameObject Hop2;
+
+    public GameObject YEETER;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -144,6 +150,18 @@ public class Movement : MonoBehaviour
             Zeb1.SetActive(true);
 
             Debug.Log("Finished");
+        }
+    }
+
+    void Hopper()
+    {
+        if (Hop.activeSelf == true)
+        {
+            Hop2.SetActive(true);
+
+            YEETER.SetActive(false);
+
+            Debug.Log("Gimma");
         }
     }
 }
