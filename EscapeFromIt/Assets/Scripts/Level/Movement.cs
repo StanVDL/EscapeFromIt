@@ -84,9 +84,9 @@ public class Movement : MonoBehaviour
 
         if (SkipMessage.activeSelf == true && Input.GetKeyDown(KeyCode.E))
         {
-            SkipMessage.SetActive(false);
+            Destroy(SkipMessage);
 
-            SlimeMessage.SetActive(false);
+            Destroy(SlimeMessage);
         }
     }
 
@@ -110,12 +110,22 @@ public class Movement : MonoBehaviour
             jump = 10f;
         }
 
+        if (hit.gameObject.CompareTag("Enemy") && SlimeMessage.activeSelf == true)
+        {
+            TimerMessage.SetActive(false);
+        }
+
         if (hit.gameObject.CompareTag("Respawn"))
         {
             TimerMessage.SetActive(true);
         }
 
-        if (hit.gameObject.CompareTag("Enemy") || hit.gameObject.CompareTag("Friendly"))
+        if (hit.gameObject.CompareTag("Friendly"))
+        {
+            TimerMessage.SetActive(false);
+        }
+
+        if (hit.gameObject.tag != "Respawn")
         {
             TimerMessage.SetActive(false);
         }
