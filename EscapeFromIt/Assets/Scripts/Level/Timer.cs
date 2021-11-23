@@ -34,6 +34,6 @@ public class Timer : MonoBehaviour
 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        timeText.text = string.Format("{00}", seconds);
+        timeText.text = string.Format("It's really hot now, dying in: {00} seconds", seconds);
     }
 }
