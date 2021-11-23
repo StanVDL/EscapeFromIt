@@ -533,6 +533,7 @@ MonoBehaviour:
   Hop: {fileID: 0}
   Hop2: {fileID: 0}
   YEETER: {fileID: 0}
+  TimerMessage: {fileID: 886819998}
 --- !u!1 &511332193
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &886819999
 RectTransform:
   m_ObjectHideFlags: 0

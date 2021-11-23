@@ -47,6 +47,8 @@ public class Movement : MonoBehaviour
 
     public GameObject YEETER;
 
+    public GameObject TimerMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,6 +108,16 @@ public class Movement : MonoBehaviour
         else
         {
             jump = 10f;
+        }
+
+        if (hit.gameObject.CompareTag("Respawn"))
+        {
+            TimerMessage.SetActive(true);
+        }
+
+        if (hit.gameObject.CompareTag("Enemy") || hit.gameObject.CompareTag("Friendly"))
+        {
+            TimerMessage.SetActive(false);
         }
     }
 
