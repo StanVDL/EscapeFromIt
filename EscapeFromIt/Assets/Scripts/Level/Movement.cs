@@ -82,6 +82,7 @@ public class Movement : MonoBehaviour
 
         control.Move(velocity * Time.deltaTime);
 
+         
         if (SkipMessage.activeSelf == true && Input.GetKeyDown(KeyCode.E))
         {
             Destroy(SkipMessage);
