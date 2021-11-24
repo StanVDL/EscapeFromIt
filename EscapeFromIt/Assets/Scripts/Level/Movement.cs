@@ -49,6 +49,8 @@ public class Movement : MonoBehaviour
 
     public GameObject TimerMessage;
 
+    public bool ShowOnce = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,15 +87,17 @@ public class Movement : MonoBehaviour
          
         if (SkipMessage.activeSelf == true && Input.GetKeyDown(KeyCode.E))
         {
-            Destroy(SkipMessage);
+            SkipMessage.SetActive(false);
 
-            Destroy(SlimeMessage);
+            SlimeMessage.SetActive(false);
+
+            ShowOnce = false;
         }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("Enemy"))
+        if (hit.gameObject.CompareTag("Enemy") && ShowOnce == true)
         {
             jump = 25f;
 
@@ -104,6 +108,7 @@ public class Movement : MonoBehaviour
             slimeBox = true;
 
             SlimeBoxMessage();
+
         }
 
         else
@@ -111,10 +116,20 @@ public class Movement : MonoBehaviour
             jump = 10f;
         }
 
-        if (hit.gameObject.CompareTag("Enemy") && SlimeMessage.activeSelf == true)
+        if (hit.gameObject.CompareTag("Enemy") && ShowOnce == false)
         {
-            TimerMessage.SetActive(false);
+            jump = 25f;
+
+            autoJump = true;
+
+            AutoJump();
         }
+
+        else
+        {
+            jump = 10f;
+        }
+
 
         if (hit.gameObject.CompareTag("Respawn"))
         {
