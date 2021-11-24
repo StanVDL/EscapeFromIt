@@ -53,6 +53,8 @@ public class Movement : MonoBehaviour
 
     public GameObject GunGame;
 
+    public GameObject WhiteBall;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -151,6 +153,8 @@ public class Movement : MonoBehaviour
         if (hit.gameObject.CompareTag("White Ball"))
         {
             GunGame.SetActive(true);
+
+            WhiteBall.SetActive(false);
         }
     }
 

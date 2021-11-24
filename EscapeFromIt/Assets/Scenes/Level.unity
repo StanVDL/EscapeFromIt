@@ -667,6 +667,7 @@ MonoBehaviour:
   TimerMessage: {fileID: 886819998}
   ShowOnce: 1
   GunGame: {fileID: 1946159483}
+  WhiteBall: {fileID: 1034300998}
 --- !u!1 &511332193
 GameObject:
   m_ObjectHideFlags: 0
