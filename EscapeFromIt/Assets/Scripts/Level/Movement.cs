@@ -51,6 +51,8 @@ public class Movement : MonoBehaviour
 
     public bool ShowOnce = true;
 
+    public GameObject GunGame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,7 +101,7 @@ public class Movement : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Enemy") && ShowOnce == true)
         {
-            jump = 25f;
+            jump = 20f;
 
             autoJump = true;
 
@@ -144,6 +146,11 @@ public class Movement : MonoBehaviour
         if (hit.gameObject.tag != "Respawn")
         {
             TimerMessage.SetActive(false);
+        }
+
+        if (hit.gameObject.CompareTag("White Ball"))
+        {
+            GunGame.SetActive(true);
         }
     }
 
