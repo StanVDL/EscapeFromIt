@@ -55,6 +55,8 @@ public class Movement : MonoBehaviour
 
     public GameObject WhiteBall;
 
+    public GameObject Swiped;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -211,6 +213,14 @@ public class Movement : MonoBehaviour
             YEETER.SetActive(false);
 
             Debug.Log("Gimma");
+        }
+    }
+
+    void ShiDaggoe()
+    {
+        if (Swiped.activeSelf == true)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
