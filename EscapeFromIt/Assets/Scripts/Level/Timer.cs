@@ -9,6 +9,10 @@ public class Timer : MonoBehaviour
 
     public Text timeText;
 
+    public bool isDead = false;
+
+    public GameObject YouDied;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,10 +34,23 @@ public class Timer : MonoBehaviour
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
+
+
         }
 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("It's really hot now, dying in: {00} seconds", seconds);
+    }
+
+    void Dead()
+    {
+        isDead = true;
+
+        if (isDead == true)
+        {
+            YouDied.SetActive(true);
+
+        }
     }
 }
