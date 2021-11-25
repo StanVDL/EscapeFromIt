@@ -1015,9 +1015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997fd99f50070884684a51dba6bb210e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 11
+  timeValue: 6
   timeText: {fileID: 886820001}
-  isDead: 0
   YouDied: {fileID: 1731108133}
 --- !u!114 &886820001
 MonoBehaviour:

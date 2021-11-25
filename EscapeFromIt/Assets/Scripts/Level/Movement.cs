@@ -99,6 +99,11 @@ public class Movement : MonoBehaviour
 
             ShowOnce = false;
         }
+
+        if (Timer.isDead == true)
+        {
+            TimerMessage.SetActive(false);
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

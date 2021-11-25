@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 
     public Text timeText;
 
-    public bool isDead = false;
+    public static bool isDead = false;
 
     public GameObject YouDied;
 
@@ -54,7 +54,6 @@ public class Timer : MonoBehaviour
         if (isDead == true)
         {
             YouDied.SetActive(true);
-
         }
     }
 }
