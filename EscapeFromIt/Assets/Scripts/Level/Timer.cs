@@ -34,13 +34,17 @@ public class Timer : MonoBehaviour
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
-
-
         }
 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("It's really hot now, dying in: {00} seconds", seconds);
+
+        if (seconds < 1)
+        {
+            Dead();
+
+        }
     }
 
     void Dead()
