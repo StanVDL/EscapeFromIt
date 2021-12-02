@@ -199,4 +199,18 @@ public class ObjectScripts : MonoBehaviour
         }
 
     }
+
+    void Zeb()
+
+    {
+
+        if (Zebs.activeSelf == false)
+
+        {
+            gameObject.SetActive(true);
+
+            Debug.Log("Yeet");
+        }
+
+    }
 }
