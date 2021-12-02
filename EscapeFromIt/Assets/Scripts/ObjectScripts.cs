@@ -42,6 +42,14 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject Gimma;
 
+    public GameObject Koweid;
+
+    public GameObject Zebs;
+
+    public GameObject Koweid2;
+
+    public GameObject Zebs2;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -170,5 +178,25 @@ public class ObjectScripts : MonoBehaviour
 
             Debug.Log("WHOESHOEM");
         }
+    }
+
+    void Kowid()
+    {
+
+        if (Koweid.activeSelf == true)
+        {
+            gameObject.SetActive(false);
+        }
+
+    }
+
+    void Kowid2()
+    {
+
+        if (Koweid2.activeSelf == false)
+        {
+            gameObject.SetActive(true);
+        }
+
     }
 }
