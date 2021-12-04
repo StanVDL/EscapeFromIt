@@ -50,6 +50,10 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject Zebs2;
 
+    public GameObject HintToHint;
+
+    public GameObject HideHint;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -226,6 +230,30 @@ public class ObjectScripts : MonoBehaviour
             Debug.Log("So");
 
             Debug.Log("Do");
+        }
+    }
+
+    void HideH()
+    {
+
+        if(HideHint.activeSelf == false)
+        {
+            gameObject.SetActive(true);
+
+            Debug.Log("Correct");
+
+        }
+    }
+
+    void Hintt()
+    {
+
+        if (HintToHint.activeSelf == true)
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("Correct21");
         }
     }
 }
