@@ -213,4 +213,19 @@ public class ObjectScripts : MonoBehaviour
         }
 
     }
+
+    void Zeb2()
+    {
+        if (Zebs2.activeSelf == true)
+
+        {
+            gameObject.SetActive(false);
+
+            Debug.Log("If");
+
+            Debug.Log("So");
+
+            Debug.Log("Do");
+        }
+    }
 }
