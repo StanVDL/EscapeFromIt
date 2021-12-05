@@ -54,6 +54,14 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject HideHint;
 
+    public GameObject Abc;
+
+    public GameObject Def;
+
+    public GameObject Ghi;
+
+    public GameObject Jkl;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -255,5 +263,34 @@ public class ObjectScripts : MonoBehaviour
 
             Debug.Log("Correct21");
         }
+    }
+
+    void Alfa()
+    {
+
+        if (Abc.activeSelf == false)
+
+        {
+
+            gameObject.SetActive(true);
+
+        }
+
+    }
+
+    void Bet()
+
+    {
+
+        if (Def.activeSelf == true)
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("Yessir");
+
+        }
+
     }
 }
