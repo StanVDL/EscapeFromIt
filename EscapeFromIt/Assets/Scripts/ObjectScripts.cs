@@ -292,5 +292,38 @@ public class ObjectScripts : MonoBehaviour
 
         }
 
+
+        else
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log("Nosir");
+
+        }
+
+    }
+
+    void DeOverige()
+    {
+
+        if (Ghi.activeSelf == false)
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log(" ");
+
+        }
+
+        else
+        {
+
+            gameObject.SetActive(false);
+
+        }
+
     }
 }
