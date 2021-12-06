@@ -326,4 +326,28 @@ public class ObjectScripts : MonoBehaviour
         }
 
     }
+
+    void JkkL()
+
+    {
+
+        if (Jkl.activeSelf == true)
+        
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log(" T ");
+
+        }
+
+        else
+
+        {
+
+            gameObject.SetActive(true);
+
+        }
+
+    }
 }
