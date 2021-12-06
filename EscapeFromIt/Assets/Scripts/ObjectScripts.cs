@@ -262,6 +262,11 @@ public class ObjectScripts : MonoBehaviour
             gameObject.SetActive(false);
 
             Debug.Log("Correct21");
+
+            Debug.Log("Zemmel");
+
+
+            Debug.Log("Yes");
         }
     }
 
@@ -290,6 +295,9 @@ public class ObjectScripts : MonoBehaviour
 
             Debug.Log("Yessir");
 
+
+            Debug.Log("Moad");
+
         }
 
 
@@ -300,6 +308,8 @@ public class ObjectScripts : MonoBehaviour
             gameObject.SetActive(true);
 
             Debug.Log("Nosir");
+
+            Debug.Log("Ozefo");
 
         }
 
@@ -322,6 +332,8 @@ public class ObjectScripts : MonoBehaviour
         {
 
             gameObject.SetActive(false);
+
+            Debug.Log("Overige Active ");
 
         }
 
