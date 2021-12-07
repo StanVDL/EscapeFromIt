@@ -426,4 +426,58 @@ public class ObjectScripts : MonoBehaviour
 
     }
 
+    void Konkk()
+
+    {
+
+        if (konk.activeSelf == true)
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("Konk");
+
+        }
+
+
+        else
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log("Konkk");
+
+        }
+
+    }
+
+    void Kinkk()
+
+    {
+
+        if (kink.activeSelf == false)
+
+        {
+
+            gameObject.SetActive(true);
+
+
+            Debug.Log("Kink");
+
+        }
+
+        else
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("Kinkk");
+
+        }
+
+    }
+
 }
