@@ -62,6 +62,14 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject Jkl;
 
+    public GameObject kank;
+
+    public GameObject kenk;
+
+    public GameObject kink;
+
+    public GameObject konk;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -362,4 +370,60 @@ public class ObjectScripts : MonoBehaviour
         }
 
     }
+
+
+    void kankk()
+
+    {
+
+        if (kank.activeSelf == true)
+
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("Kank");
+
+        }
+
+        else
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log("Kankk");
+
+        }
+
+
+    }
+
+    void Kenkk()
+
+    {
+
+        if (kenk.activeSelf == false)
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log("Kenk");
+
+        }
+
+        else
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("Kenkk");
+
+        }
+
+    }
+
 }
