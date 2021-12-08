@@ -70,6 +70,13 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject konk;
 
+    public GameObject Tegel;
+
+    public GameObject Tegel2;
+
+    public GameObject Tegel3;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -480,4 +487,60 @@ public class ObjectScripts : MonoBehaviour
 
     }
 
+
+    void Tegl()
+
+    {
+
+        if (Tegel.activeSelf == true)
+
+        {
+
+            gameObject.SetActive(false);
+
+
+            Debug.Log(" ");
+
+        }
+
+
+        else
+
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log("True");
+
+        }
+
+    }
+
+    void Tegl2()
+
+    {
+
+        if (Tegel2.activeSelf == false)
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log(" ");
+
+        }
+
+
+        else
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("False");
+
+        }
+
+    }
 }
