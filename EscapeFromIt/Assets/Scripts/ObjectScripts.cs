@@ -543,4 +543,31 @@ public class ObjectScripts : MonoBehaviour
         }
 
     }
+
+    void Tegl3()
+
+    {
+
+        if (Tegel3.activeSelf == true)
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("False");
+
+        }
+
+
+        else
+
+        {
+
+            gameObject.SetActive(true);
+
+            Debug.Log("True");
+
+        }
+    }
+
 }
