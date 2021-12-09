@@ -76,6 +76,10 @@ public class ObjectScripts : MonoBehaviour
 
     public GameObject Tegel3;
 
+    public GameObject Tegel4;
+
+    public GameObject Tegel5;
+
 
     private void Start()
     {
@@ -568,6 +572,41 @@ public class ObjectScripts : MonoBehaviour
             Debug.Log("True");
 
         }
+    }
+
+
+    void Tegl4()
+
+    {
+
+        if (Tegel4.activeSelf == true)
+
+
+        {
+
+            gameObject.SetActive(false);
+
+            Debug.Log("False");
+
+        }
+
+    }
+
+    void Tegl5()
+
+    {
+
+        if (Tegel5.activeSelf == false)
+
+        {
+
+            gameObject.SetActive(true);
+
+
+            Debug.Log("True");
+
+        }
+
     }
 
 }
